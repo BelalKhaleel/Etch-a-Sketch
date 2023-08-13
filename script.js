@@ -12,7 +12,7 @@ function populateBoard(size) {
   for (let i = 0; i < amount; i++) {
     let square = document.createElement("div");
     square.style.backgroundColor = "white";
-    //square.style.border = "1px solid black";
+    //square.style.border = "1px solid lightblack";
     board.insertAdjacentElement("beforeend", square);
     square.addEventListener("mouseover", colorSquare);
   }
@@ -22,7 +22,10 @@ populateBoard(16);
 
 function changeSize(input) {
   if(input >= 2 && input <= 100) {
+    document.querySelector(".error").style.display = 'none'
     populateBoard(input);
+  } else {
+    document.querySelector(".error").style.display = 'flex'
   }
 }
 
@@ -45,3 +48,14 @@ function resetBoard() {
   let squares = board.querySelectorAll("div");
   squares.forEach((div) => div.style.backgroundColor = "white");
 }
+
+document.querySelector(".board").addEventListener("click", (e) => {
+  if (e.target.tagName != 'BUTTON') {
+    click =! click;
+    if (click) {
+      document.querySelector(".mode").textContent = "Mode: Coloring";
+    } else {
+      document.querySelector(".mode").textContent = "Mode: Not Coloring";
+    }
+  }
+});
