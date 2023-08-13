@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,27 @@
   <link rel="stylesheet" href="reset.css">
   <title>Sketchpad</title>
 </head>
+
 <body>
-  
+  <div class="flex-container">
+    <div class="title">
+      <h1>SketchPad</h1>
+    </div>
+    <div class="content">
+      <div class="board"></div>
+      <div class="buttons">
+        <button>Black</button>
+        <button>White</button>
+        <button>Random</button>
+        <button>Reset</button>
+      </div>
+      <div>
+        <input type="text" placeholder="Size of text" value="16" onchange="changeSize(this.value)">
+        <button>Set size</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
